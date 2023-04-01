@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "./userinfo";
+
+message Userinfo{
+  string username = 1;
+  int32 age = 2;
+  PhoneType type = 3;
+  repeated string hobby = 4;
+}
+
+enum PhoneType {
+  MOBILE = 0;
+  HOME = 1;
+  WORK = 2;
+}
