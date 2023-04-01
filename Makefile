@@ -7,11 +7,14 @@ json:
 	go build -o build/server-json cmd/demojson/server.go
 
 goods:
-	go build -o build/goods-server cmd/goods/goods_server.go
-	go build -o build/goods-client cmd/goods/goods_client.go
+	go build -o build/goods-server cmd/demogoods/goods_server.go
+	go build -o build/goods-client cmd/demogoods/goods_client.go
+
+grpc:
+	go build -o build/greeter-server cmd/demogrpc/greeter/server.go
+	go build -o build/greeter-client cmd/demogrpc/greeter/client.go
 
 
-
-all: demo json goods
+all: demo json goods grpc
 
 

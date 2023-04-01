@@ -28,5 +28,4 @@ func main() {
 		return
 	}
 	fmt.Println(u2.Username, u2.Age, u2.Hobby)
-
 }
