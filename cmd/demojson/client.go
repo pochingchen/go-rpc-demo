@@ -16,13 +16,13 @@ func main() {
 	defer conn.Close()
 
 	client := rpc.NewClientWithCodec(jsonrpc.NewClientCodec(conn))
+
 	var reply string
 	err = client.Call("hello.Hello", "cdd", &reply)
 	if err != nil {
 		fmt.Println("Call:", err)
 		return
 	}
-
 	fmt.Println("reply:", reply)
 
 	var reply2 int
@@ -31,15 +31,13 @@ func main() {
 		fmt.Println("Call:", err)
 		return
 	}
-
 	fmt.Println("reply:", reply2)
 
 	var reply3 int
-	err = client.Call("hello.What", 100, &reply2)
+	err = client.Call("hello.What", 100, &reply3)
 	if err != nil {
 		fmt.Println("Call:", err)
 		return
 	}
-
 	fmt.Println("reply:", reply3)
 }
