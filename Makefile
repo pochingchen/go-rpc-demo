@@ -1,12 +1,17 @@
-client:
-	go build -o build/client cmd/client/client.go
-server:
-	go build -o build/server cmd/server/server.go
+demo:
+	go build -o build/client cmd/demo/client.go
+	go build -o build/server cmd/demo/server.go
 
-all: client server
+json:
+	go build -o build/client-json cmd/demojson/client.go
+	go build -o build/server-json cmd/demojson/server.go
 
-run:
-	./build/cmd/client
-	./build/cmd/server
-	
+goods:
+	go build -o build/goods-server cmd/goods/goods_server.go
+	go build -o build/goods-client cmd/goods/goods_client.go
+
+
+
+all: demo json goods
+
 
