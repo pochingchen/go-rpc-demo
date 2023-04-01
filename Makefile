@@ -14,6 +14,8 @@ grpc:
 	go build -o build/greeter-server cmd/demogrpc/greeter/server.go
 	go build -o build/greeter-client cmd/demogrpc/greeter/client.go
 
+clean:
+	rm -rf build/*
 
 all: demo json goods grpc
 
