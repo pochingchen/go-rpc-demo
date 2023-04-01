@@ -10,17 +10,15 @@ import (
 type Hello struct{}
 
 func (h Hello) Hello(req string, res *string) error {
+	fmt.Println("Hello:", req)
 	*res = "hello " + req
-	return nil
-}
-
-func (h Hello) What(req int, res *int) error {
 	return nil
 }
 
 type World struct{}
 
 func (w World) Increment(req int, res *int) error {
+	fmt.Println("Increment:", req)
 	*res = req + 1
 	return nil
 }
@@ -36,7 +34,7 @@ func main() {
 		fmt.Println("register name:", err)
 		return
 	}
-	listener, err := net.Listen("tcp", "127.0.0.1:9000")
+	listener, err := net.Listen("tcp", "0.0.0.0:9000")
 	if err != nil {
 		fmt.Println("listen:", err)
 		return

@@ -32,12 +32,4 @@ func main() {
 		return
 	}
 	fmt.Println("reply:", reply2)
-
-	var reply3 int
-	err = client.Call("hello.What", 100, &reply3)
-	if err != nil {
-		fmt.Println("Call:", err)
-		return
-	}
-	fmt.Println("reply:", reply3)
 }
